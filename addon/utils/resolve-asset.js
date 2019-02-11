@@ -68,7 +68,7 @@ function getAssetPath(path, withoutPrepend = false) {
     );
   }
 
-  if (withoutPrepend) return resolved;
+  if (withoutPrepend) return `${config.rootURL}${resolved}`;
 
-  return `${assetMap.prepend}${resolved}`;
+  return `${assetMap.prepend || config.rootURL}${resolved}`;
 }
