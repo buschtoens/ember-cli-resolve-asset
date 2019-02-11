@@ -1,4 +1,5 @@
 import { DEBUG } from '@glimmer/env';
+import config from 'ember-get-config';
 import { assetMap, load } from '../-private/asset-map-loader';
 
 /**
@@ -47,6 +48,10 @@ export function resolveAssetSync(path, withoutPrepend = false) {
  * @param {boolean} withoutPrepend
  */
 function getAssetPath(path, withoutPrepend = false) {
+  if (assetMap.enabled === false) {
+    return `${config.rootURL}${path}`;
+  }
+
   const resolved = assetMap.assets[path];
 
   if (!resolved) {

@@ -6,7 +6,8 @@ let promise;
 
 export const assetMap = {
   assets: null,
-  prepend: null
+  prepend: null,
+  enabled: null
 };
 
 export async function load() {
@@ -15,9 +16,14 @@ export async function load() {
 }
 
 async function fetchAssetMap() {
-  const response = await fetch(assetMapPath);
-  const json = await response.json();
-  assetMap.assets = DEBUG ? Object.freeze(json.assets) : json.assets;
-  assetMap.prepend = json.prepend;
+  if (assetMapPath) {
+    const response = await fetch(assetMapPath);
+    const json = await response.json();
+    assetMap.assets = DEBUG ? Object.freeze(json.assets) : json.assets;
+    assetMap.prepend = json.prepend;
+    assetMap.enabled = true;
+  } else {
+    assetMap.enabled = false;
+  }
   return assetMap;
 }
