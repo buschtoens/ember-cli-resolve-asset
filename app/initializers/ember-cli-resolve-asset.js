@@ -1,1 +1,3 @@
-export * from 'ember-cli-resolve-asset/initializers/ember-cli-resolve-asset';
+export {
+  default
+} from 'ember-cli-resolve-asset/initializers/ember-cli-resolve-asset';
