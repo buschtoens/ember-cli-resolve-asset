@@ -37,11 +37,11 @@ module.exports = {
    * @param {string} configName
    */
   setupMessage(
-    msg,
+    message,
     addonName = 'broccoli-asset-rev',
     configName = 'fingerprint'
   ) {
-    return `The config for ${addonName} ('${configName}' in 'ember-cli-build.js') is incorrect.\n${msg}\nRefer to the setup guide for more information: ${README_SETUP_URL}`;
+    return `The config for ${addonName} ('${configName}' in 'ember-cli-build.js') is incorrect.\n${message}\nRefer to the setup guide for more information: ${README_SETUP_URL}`;
   },
 
   /**
@@ -49,8 +49,8 @@ module.exports = {
    *
    * @param {string} msg
    */
-  error(msg) {
-    throw new Error(`${this.name}: ${msg}`);
+  error(message) {
+    throw new Error(`${this.name}: ${message}`);
   },
 
   /**
@@ -58,8 +58,8 @@ module.exports = {
    *
    * @param {string} msg
    */
-  warn(msg) {
-    this.ui.writeWarnLine(`${this.name}: ${msg}`);
+  warn(message) {
+    this.ui.writeWarnLine(`${this.name}: ${message}`);
   },
 
   included(...args) {
@@ -89,9 +89,9 @@ module.exports = {
       );
     }
 
-    const fingerprintOpts = this.app.options.fingerprint;
+    const fingerprintOptions = this.app.options.fingerprint;
 
-    if (typeof fingerprintOpts === 'undefined') {
+    if (typeof fingerprintOptions === 'undefined') {
       this.error(
         this.setupMessage(
           `The config is missing. This means that the default config will be used, which has 'generateAssetMap' disabled. We need it to be enabled.`
@@ -100,7 +100,7 @@ module.exports = {
       return;
     }
 
-    if (fingerprintOpts === false) {
+    if (fingerprintOptions === false) {
       this.warn(
         this.setupMessage(
           `You have explicitly disabled it via the 'false' shorthand notation. This addon will have no effect now.`
@@ -109,12 +109,12 @@ module.exports = {
       return;
     }
 
-    if (!(fingerprintOpts instanceof Object)) {
+    if (!(fingerprintOptions instanceof Object)) {
       this.error(this.setupMessage(`You gave an invalid config.`));
       return;
     }
 
-    if (!fingerprintOpts.generateAssetMap) {
+    if (!fingerprintOptions.generateAssetMap) {
       this.error(
         this.setupMessage(
           `'generateAssetMap' is disabled. We need it to be enabled.`
@@ -123,7 +123,7 @@ module.exports = {
       return;
     }
 
-    if (!fingerprintOpts.fingerprintAssetMap) {
+    if (!fingerprintOptions.fingerprintAssetMap) {
       this.warn(
         this.setupMessage(
           `'fingerprintAssetMap' is disabled. We recommend that you enable it to prevent caching issues.`
@@ -131,10 +131,11 @@ module.exports = {
       );
     }
 
-    if (!fingerprintOpts.enabled) return;
+    if (!fingerprintOptions.enabled) return;
 
     // Use path from fingerprint config or default path, if not set.
-    this.assetMapPath = fingerprintOpts.assetMapPath || DEFAULT_ASSET_MAP_PATH;
+    this.assetMapPath =
+      fingerprintOptions.assetMapPath || DEFAULT_ASSET_MAP_PATH;
   },
 
   /**
@@ -149,8 +150,6 @@ module.exports = {
   contentFor(type, config) {
     if (!this.assetMapPath || type !== 'head') return;
 
-    return `<link rel="preload" href="${config.rootURL}${
-      this.assetMapPath
-    }" as="fetch" type="application/json" crossorigin="anonymous" id="${LINK_ID}">`;
+    return `<link rel="preload" href="${config.rootURL}${this.assetMapPath}" as="fetch" type="application/json" crossorigin="anonymous" id="${LINK_ID}">`;
   }
 };

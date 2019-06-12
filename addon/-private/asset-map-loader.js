@@ -1,5 +1,6 @@
 import { DEBUG } from '@glimmer/env';
 import fetch from 'fetch';
+
 import assetMapPath from './asset-map-path';
 
 let promise;
@@ -9,11 +10,6 @@ export const assetMap = {
   prepend: null,
   enabled: null
 };
-
-export async function load() {
-  if (promise) return promise;
-  return (promise = fetchAssetMap());
-}
 
 async function fetchAssetMap() {
   if (assetMapPath) {
@@ -26,4 +22,10 @@ async function fetchAssetMap() {
     assetMap.enabled = false;
   }
   return assetMap;
+}
+
+export async function load() {
+  if (promise) return promise;
+  promise = fetchAssetMap();
+  return promise;
 }
