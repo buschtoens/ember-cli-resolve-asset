@@ -43,8 +43,9 @@ function getAssetPath(path, withoutPrepend = false) {
  * Asynchronously resolves the given `path` from the asset map.
  *
  * If the asset map is not loaded yet, this function will wait for it.
- * If loading the asset map fails, this function will throw.
- * If the path is not listed in the asset map, this function will throw.
+ * If loading the asset map fails, the returned `Promise` will reject.
+ * If the path is not listed in the asset map, the returned `Promise` will
+ * reject.
  *
  * @param {string} path
  * @param {boolean} withoutPrepend
@@ -57,6 +58,8 @@ export async function resolveAsset(path, withoutPrepend = false) {
 export default resolveAsset;
 
 /**
+ * Synchronous version of `resolveAsset`.
+ *
  * Synchronously resolves the given `path` from the asset map.
  *
  * If the asset map is not loaded yet, this function will throw.

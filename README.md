@@ -42,11 +42,21 @@ const app = new EmberAddon(defaults, {
 
 ## Usage
 
-### Example
+### Utils
+
+#### `resolveAsset`
+
+**`async resolveAsset(path: string, withoutPrepend = false): Promise<string>`**
+
+Asynchronously resolves the given `path` from the asset map.
+
+If the asset map is not loaded yet, this function will wait for it.
+If loading the asset map fails, the returned `Promise` will reject.
+If the path is not listed in the asset map, the returned `Promise` will reject.
 
 ```ts
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember-decorators/service';
+import { inject as service } from '@ember/service';
 import fetch from 'fetch';
 import resolveAsset from 'ember-cli-resolve-asset';
 
@@ -66,6 +76,62 @@ export default class ApplicationRoute extends Route {
   }
 }
 ```
+
+#### `resolveAssetSync`
+
+**`resolveAssetSync(path: string, withoutPrepend = false): string`**
+
+Synchronous version of [`resolveAsset`](#resolveAsset).
+
+Synchronously resolves the given `path` from the asset map.
+
+If the asset map is not loaded yet, this function will throw.
+If the path is not listed in the asset map, this function will throw.
+
+Usage of this function is discouraged in favor of `resolveAsset`. Only use this
+function, if using the async version is not feasible and if you can guarantee,
+that [`load`](#load) ran to completion beforehand.
+
+```ts
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import fetch from 'fetch';
+import {
+  resolveAssetSync,
+  load as loadAssetMap
+} from 'ember-cli-resolve-asset';
+
+export default class ApplicationRoute extends Route {
+  @service intl;
+  @service language;
+
+  async beforeModel() {
+    await loadAssetMap();
+
+    const preferredLanguage = this.language.getPreferredLanguage();
+    const translationsPath = resolveAssetSync(
+      `translations/${preferredLanguage}.json`
+    );
+    const translations = await fetch(translationsPath);
+
+    this.intl.addTranslations(preferredLanguage, await translations.json());
+    this.intl.setLocale(preferredLanguage);
+  }
+}
+```
+
+#### `load`
+
+**`async load(): Promise<void>`**
+
+This function returns a `Promise` that resolves once the asset map was loaded
+successfully. Repeatedly calling this function returns the same `Promise`. After
+this `Promise` has resolved, you can use
+[`resolveAssetSync`](#resolveAssetSync).
+
+This function is called automatically by an initializer, to start the loading of
+the asset map as soon as possible. This means there is no direct need for you to
+call this function yourself, unless you want to await the asset map explicitly.
 
 ## Related Projects
 
