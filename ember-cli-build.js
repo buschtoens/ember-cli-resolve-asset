@@ -7,7 +7,8 @@ module.exports = function(defaults) {
     fingerprint: {
       enabled: true,
       generateAssetMap: true,
-      fingerprintAssetMap: true
+      fingerprintAssetMap: true,
+      exclude: ['/testem.js']
     },
 
     'ember-fetch': {
