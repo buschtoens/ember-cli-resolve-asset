@@ -30,7 +30,7 @@ function getAssetPath(path, withoutPrepend = false) {
     }
 
     throw new Error(
-      `ember-cli-resolve-asset: Could not find '${path} in the asset map.'`
+      `ember-cli-resolve-asset: Could not find '${path}' in the asset map.`
     );
   }
 

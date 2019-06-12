@@ -24,7 +24,9 @@ async function fetchAssetMap() {
   return assetMap;
 }
 
-export async function load() {
+// Not using `async` here so that `load` can return the same `Promise` instance
+// with each invocation.
+export /* async */ function load() {
   if (promise) return promise;
   promise = fetchAssetMap();
   return promise;
