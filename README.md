@@ -18,6 +18,10 @@ _interpolated_ paths.
 ember install ember-cli-resolve-asset
 ```
 
+If you want to use this in one of your addons, the consuming host application
+will also need to install `ember-cli-resolve-asset`. If this not a case, a
+helpful build error will be shown.
+
 ### Setup
 
 The following configuration in your `ember-cli-build.js` is required for this
