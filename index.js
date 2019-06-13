@@ -65,7 +65,26 @@ module.exports = {
   included(...args) {
     this._super && this._super(...args);
 
-    this.determineAssetMapPath();
+    if (this.app) {
+      this.determineAssetMapPath();
+    } else {
+      this.checkIfInstalledAtRoot();
+    }
+  },
+
+  /**
+   * Invoked, if this instance of the addon is not a direct dependency of the
+   * main project Ember app.
+   *
+   * Checks, whether the main project Ember app has this addon as a direct
+   * dependency and throws a build error otherwise.
+   */
+  checkIfInstalledAtRoot() {
+    if (!this.project.findAddonByName('ember-cli-resolve-asset')) {
+      this.error(
+        `'${this.parent.name}' uses '${this.name}', which requires you to also install it for your app.\nPlease run \`yarn add -D ${this.name}\` `
+      );
+    }
   },
 
   /**
