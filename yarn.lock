@@ -4053,10 +4053,10 @@ ember-source@~3.15.0:
     semver "^6.1.1"
     silent-error "^1.1.1"
 
-ember-template-lint@^1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.12.2.tgz#09143197be2a20778d29f5f912d39b472f26a47f"
-  integrity sha512-scf7lzIArLaFt5bq3tmC+BP9vywzct4Z0ttSTtrIR9CZeCBoEUFudNlc1aDqp++fM94LcEEHkmEzKnDUStXJZQ==
+ember-template-lint@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.13.0.tgz#9e271da31ca34fe65ed8af30f91b94cb701d3093"
+  integrity sha512-poQoMxSaUs+7LQgN5+h7DkNyvSkpoX94uwEA2WkPrsyXJeUSwO9541jiseXUFNCCNMvEDAlBPvOcfG99BA9uxA==
   dependencies:
     "@glimmer/syntax" "^0.45.0"
     chalk "^2.0.0"
