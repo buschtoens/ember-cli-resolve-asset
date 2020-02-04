@@ -914,12 +914,12 @@
   dependencies:
     "@clark/eslint-config" "^1.4.1"
 
-"@clark/eslint-config-ember-order-imports@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.3.1.tgz#cf4aaa4cc82a337126b54f83cf57e6023764ee9a"
-  integrity sha512-uZRWsD3hCM9irEhnfvCpVkGDsudxJbiigZEtUmySIaBYPnk52dL0HlUWK/gHQsEngXhDUfksfzECLnAVBAP5VA==
+"@clark/eslint-config-ember-order-imports@^1.20.0", "@clark/eslint-config-ember-order-imports@^1.3.1":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.20.0.tgz#931f10f8450d0ac9b3b4642802e05fbeefaa4bed"
+  integrity sha512-N3O/57eogDlfHAKft3TT7GPAqpj0tqEheg/t3PjZNzu7k3yHzF1DHaChbnWr3F+OHRwskUC2Ydw07p+KDUgYZA==
   dependencies:
-    eslint-plugin-import-helpers "^1.0.1"
+    "@clark/eslint-plugin-import-helpers-with-package" "^1.20.0"
 
 "@clark/eslint-config-ember@^1.4.1":
   version "1.4.1"
@@ -963,6 +963,21 @@
     eslint-plugin-prettier "^3.1.2"
     eslint-plugin-unicorn "^15.0.1"
     prettier "^1.19.1"
+
+"@clark/eslint-plugin-import-helpers-with-package@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-plugin-import-helpers-with-package/-/eslint-plugin-import-helpers-with-package-1.20.0.tgz#1c2e58b02255574bb400e02f85001ef281b3dad5"
+  integrity sha512-gIqABT8UapJwqnIVroQwHlRgPnqZbHa3ZIXVVgZrA/QuapwsmJBZ6nkT5fiaERsGXIrR5p+TxY7kEcQNy/mrqA==
+  dependencies:
+    "@clark/eslint-util-get-package" "^1.20.0"
+    eslint-plugin-import-helpers "^1.0.2"
+
+"@clark/eslint-util-get-package@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-util-get-package/-/eslint-util-get-package-1.20.0.tgz#1e82a1254acf51c6900cf5738a31573884af481b"
+  integrity sha512-yUfM7dc9bzxBENkhKuEu8Y5fAuMtxuV1rf/x7XECEqtyyt+uHwGKSRaadxHDD8+gtjRk8/BOxEHZnQXwDykptA==
+  dependencies:
+    find-up "^4.1.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
@@ -4229,11 +4244,6 @@ eslint-plugin-es@^3.0.0:
   dependencies:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
-
-eslint-plugin-import-helpers@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import-helpers/-/eslint-plugin-import-helpers-1.0.1.tgz#17a2744fe50aca322b891a35fdca06e0b4f48782"
-  integrity sha512-Zoct8gRf7yZ2s5JirKZ6AvQZfmzPlVkLmd+pCP6FtduhNfs+bGQ5mv4z+6N1rZRhN3FbSKiggfV2kMWUBnkiiA==
 
 eslint-plugin-import-helpers@^1.0.2:
   version "1.0.2"
