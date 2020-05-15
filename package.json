@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-resolve-asset",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Imperatively resolves assets fingerprinted by `broccoli-asset-rev`. Allows resolving interpolated paths.",
   "keywords": [
     "ember-addon",
