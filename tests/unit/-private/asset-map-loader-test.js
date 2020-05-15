@@ -4,7 +4,7 @@ import { module, test } from 'qunit';
 
 const moduleName = 'ember-cli-resolve-asset/-private/asset-map-loader';
 
-module('Unit | -private/asset-map-loader', function(hooks) {
+module('Unit | -private/asset-map-loader', function (hooks) {
   let assetMap;
   let load;
   hooks.beforeEach(() => {
@@ -12,7 +12,7 @@ module('Unit | -private/asset-map-loader', function(hooks) {
     ({ assetMap, load } = require(moduleName));
   });
 
-  test('`assetMap` & `load`', async function(assert) {
+  test('`assetMap` & `load`', async function (assert) {
     assert.deepEqual(
       assetMap,
       {
@@ -61,7 +61,7 @@ module('Unit | -private/asset-map-loader', function(hooks) {
     );
   });
 
-  test('Calling `load` multiple times', async function(assert) {
+  test('Calling `load` multiple times', async function (assert) {
     assert.deepEqual(
       assetMap,
       {

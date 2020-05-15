@@ -2,8 +2,8 @@ import { module, test } from 'qunit';
 
 import privateAssetMapPath from 'ember-cli-resolve-asset/-private/asset-map-path';
 
-module('Unit | -private/asset-map-path', function() {
-  test('`privateAssetMapPath` module', function(assert) {
+module('Unit | -private/asset-map-path', function () {
+  test('`privateAssetMapPath` module', function (assert) {
     assert.strictEqual(typeof privateAssetMapPath, 'string', 'is a string');
     assert.ok(
       privateAssetMapPath.startsWith('/assets/assetMap-'),
@@ -12,7 +12,7 @@ module('Unit | -private/asset-map-path', function() {
     assert.ok(privateAssetMapPath.endsWith('.json'), 'ends with `.json`');
   });
 
-  test('<link> tag', function(assert) {
+  test('<link> tag', function (assert) {
     const link = document.getElementById(
       'ember-cli-resolve-asset-asset-map-path'
     );

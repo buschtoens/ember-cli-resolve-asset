@@ -1,4 +1,5 @@
 import { DEBUG } from '@glimmer/env';
+
 import fetch from 'fetch';
 
 import assetMapPath from './asset-map-path';

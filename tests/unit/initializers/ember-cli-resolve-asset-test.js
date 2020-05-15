@@ -8,19 +8,19 @@ import { assetMap } from 'ember-cli-resolve-asset/-private/asset-map-loader';
 
 import initializer from 'dummy/initializers/ember-cli-resolve-asset';
 
-module('Unit | Initializer | ember-cli-resolve-asset', function(hooks) {
-  hooks.beforeEach(function() {
+module('Unit | Initializer | ember-cli-resolve-asset', function (hooks) {
+  hooks.beforeEach(function () {
     this.TestApplication = Application.extend();
     this.TestApplication.initializer(initializer);
 
     this.application = this.TestApplication.create({ autoboot: false });
   });
 
-  hooks.afterEach(function() {
+  hooks.afterEach(function () {
     run(this.application, 'destroy');
   });
 
-  test('it works', async function(assert) {
+  test('it works', async function (assert) {
     await settled();
 
     assert.deepEqual(

@@ -1,6 +1,6 @@
-import config from 'ember-get-config';
-
 import { DEBUG } from '@glimmer/env';
+
+import config from 'ember-get-config';
 
 import { assetMap, load } from '../-private/asset-map-loader';
 

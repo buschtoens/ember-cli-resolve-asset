@@ -11,9 +11,9 @@ import setupPretender from 'dummy/tests/helpers/pretender';
 const loaderModuleName = 'ember-cli-resolve-asset/-private/asset-map-loader';
 const resolverModuleName = 'ember-cli-resolve-asset/utils/resolve-asset';
 
-module('Unit | Utility | resolve-asset', function(hooks) {
+module('Unit | Utility | resolve-asset', function (hooks) {
   let assetMapFixture = {};
-  setupPretender(hooks, function() {
+  setupPretender(hooks, function () {
     this.get(assetMapPath, () => [
       200,
       { 'Content-Type': 'application/json' },
@@ -33,7 +33,7 @@ module('Unit | Utility | resolve-asset', function(hooks) {
   });
 
   function runTests({ name, prepend = '', prefix }) {
-    module(name, function(hooks) {
+    module(name, function (hooks) {
       hooks.beforeEach(() => {
         assetMapFixture = {
           assets: {
@@ -43,7 +43,7 @@ module('Unit | Utility | resolve-asset', function(hooks) {
         };
       });
 
-      test('`resolveAssetSync`', async function(assert) {
+      test('`resolveAssetSync`', async function (assert) {
         assert.strictEqual(assetMap.assets, null);
 
         assert.throws(
@@ -63,10 +63,9 @@ module('Unit | Utility | resolve-asset', function(hooks) {
         );
       });
 
-      test('`resolveAsset`', async function(assert) {
+      test('`resolveAsset`', async function (assert) {
         assert.strictEqual(assetMap.assets, null);
 
-        // eslint-disable-next-line no-useless-concat
         const assetPath = 'foo';
 
         const promise = resolveAsset(assetPath);
