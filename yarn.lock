@@ -1141,12 +1141,12 @@
   dependencies:
     "@clark/eslint-config" "^1.24.4"
 
-"@clark/eslint-config-ember-order-imports@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.24.4.tgz#67c2a4c79010bf85e384e085a0ff65be40ba78d9"
-  integrity sha512-dIfh9APmqs2FB9Q5EJwWM4IbQwnFNkYICpKzTqMh9YPQi987upm31c1am96gKHqyouQ1cuZjOnkGxygoGNUBOg==
+"@clark/eslint-config-ember-order-imports@^1.24.4", "@clark/eslint-config-ember-order-imports@^1.25.5":
+  version "1.25.5"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-config-ember-order-imports/-/eslint-config-ember-order-imports-1.25.5.tgz#2784053176d498923d21ab1d37e36c406fb00dfa"
+  integrity sha512-6X2/Iz/cpLZzpm3lJAqY7SRQBk5mBOmwyJ0TGOwjuOlZ87CaXZjuohrKHSNrFUq43oXY8gDIzOhdVujkPylqzw==
   dependencies:
-    "@clark/eslint-plugin-import-helpers-with-package" "^1.24.4"
+    "@clark/eslint-plugin-import-helpers-with-package" "^1.25.5"
 
 "@clark/eslint-config-ember@^1.24.4":
   version "1.24.4"
@@ -1192,20 +1192,21 @@
     eslint-plugin-unicorn "^18.0.1"
     prettier "^2.0.4"
 
-"@clark/eslint-plugin-import-helpers-with-package@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-plugin-import-helpers-with-package/-/eslint-plugin-import-helpers-with-package-1.24.4.tgz#1290dc10f9f09c533aacde949736fc89568d322f"
-  integrity sha512-9jRiFYX4RX3qSZtyk+9vTUixdL768qgOSf9eLbcGMv48/iRneNdKt43MyhH9nRacGLCoy1SV1Z/q+USQNb1IdQ==
+"@clark/eslint-plugin-import-helpers-with-package@^1.25.5":
+  version "1.25.5"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-plugin-import-helpers-with-package/-/eslint-plugin-import-helpers-with-package-1.25.5.tgz#42627477e3dd92fdf56ebe2c9d12211035d632c9"
+  integrity sha512-it04iWjokeNDuhrBB77+N1xqSqv0ayr345Fbo66v3C8La042IqYOf6psXMLi0slpB67FV68TlmXo/9QVErtBAQ==
   dependencies:
-    "@clark/eslint-util-get-package" "^1.24.4"
+    "@clark/eslint-util-get-package" "^1.25.5"
     eslint-plugin-import-helpers "^1.0.2"
 
-"@clark/eslint-util-get-package@^1.24.4":
-  version "1.24.4"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-util-get-package/-/eslint-util-get-package-1.24.4.tgz#48861c06b1d228cd5529a5d6f68e8d2184131b8b"
-  integrity sha512-xTNjw6jWW3ViEXbGLYQzeTGeP4NBZpcWmGrQkl1udzRL05mdoQPmZth8wTIaK5RagkX5WLvX0Axwk8ahsU4Hug==
+"@clark/eslint-util-get-package@^1.25.5":
+  version "1.25.5"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-util-get-package/-/eslint-util-get-package-1.25.5.tgz#69ac1aecc45b09f221928194af5e33da5d3424cb"
+  integrity sha512-BqlE5fS5nqcA/CdKTYHuBx430SRLo5xdtatQ7DYrWPFfYJbFICF2oAyytD0t8rJCM8Li26OCMZx4+myNtrmSlQ==
   dependencies:
     find-up "^4.1.0"
+    type-fest "^0.15.1"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
@@ -9931,6 +9932,11 @@ type-check@^0.4.0, type-check@~0.4.0:
   integrity sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==
   dependencies:
     prelude-ls "^1.2.1"
+
+type-fest@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.15.1.tgz#d2c4e73d3e4a53cf1a906396dd460a1c5178ca00"
+  integrity sha512-n+UXrN8i5ioo7kqT/nF8xsEzLaqFra7k32SEsSPwvXVGyAcRgV/FUQN/sgfptJTR1oRmmq7z4IXMFSM7im7C9A==
 
 type-fest@^0.5.2:
   version "0.5.2"
