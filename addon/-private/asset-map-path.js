@@ -3,9 +3,11 @@
  * into the `<head>` by `index.js`.
  */
 export default (() => {
-  const link = document.getElementById(
-    'ember-cli-resolve-asset-asset-map-path'
-  );
-  if (link) return link.getAttribute('href');
+  if (typeof FastBoot === 'undefined') {
+    const link = document.getElementById(
+      'ember-cli-resolve-asset-asset-map-path'
+    );
+    if (link) return link.getAttribute('href');
+  }
   return null;
 })();
