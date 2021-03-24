@@ -32,7 +32,10 @@ const app = new EmberAddon(defaults, {
   fingerprint: {
     enabled: true, // If false, this addon is disabled also.
     generateAssetMap: true, // Required.
-    fingerprintAssetMap: true // Recommended to prevent caching issues.
+    
+    // Recommended to prevent caching issues, although currently for it work you will need to use a fork of 
+    // "broccoli-asset-rev": "https://github.com/joankaradimov/broccoli-asset-rev#fix-duplicate-generation"
+    fingerprintAssetMap: true 
   },
 
   'ember-fetch': {
